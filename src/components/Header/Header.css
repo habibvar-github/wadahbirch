@@ -44,7 +44,7 @@
   transform: translateX(-50%);
 }
 .header .logo img {
-  height: calc(2vw + 2em);
+  height: calc(2vw + 1em);
 }
 @media (max-width: 768px) {
   .header {
