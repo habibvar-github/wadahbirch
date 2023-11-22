@@ -7,7 +7,7 @@ const HomePage = () => {
       <section className="hero-section">
         {/* <img src="/product-main.png" alt="bottles-and-packing" /> */}
       </section>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et
+      orem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et
       iaculis metus. Duis hendrerit non leo vel commodo. Integer mauris odio,
       sodales in ornare in, iaculis eu metus. Maecenas felis purus, accumsan
       iaculis vestibulum eget, efficitur quis erat. Praesent a tincidunt neque.
