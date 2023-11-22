@@ -24,7 +24,7 @@
 }
 @media (max-width: 768px) {
   .product-box {
-    width: 182px;
+    min-width: 182px;
   }
 }
 
