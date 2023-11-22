@@ -2,9 +2,12 @@
   width: 100%;
   height: calc(100vh + 100px); /* 100px greater than the viewport height */
   background-image: url("../../../public/product-main.png"); /* Replace with your image path */
-  background-size: cover;
+  background-size: auto;
   background-position: center;
   background-repeat: no-repeat;
+  @media (max-width: 756px) {
+    height: 936px;
+  }
 }
 .product-section {
   display: flex;
