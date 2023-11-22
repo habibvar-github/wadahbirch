@@ -10,17 +10,17 @@ const HomePage = () => {
       <section class="product-section">
         <div class="product-box">
           <div class="image-container">
+            <p>6 x 1L Birch Sap</p>
             <img src="product-1L.png" alt="Product 1" />
             <button class="add-to-cart">Add to Cart</button>
           </div>
-          <h3>6 x 1L</h3>
         </div>
         <div class="product-box">
           <div class="image-container">
+            <p>6 x 500ml Birch Sap</p>
             <img src="product-500ML.png" alt="Product 2" />
             <button class="add-to-cart">Add to Cart</button>
           </div>
-          <h3>6 x 500ml</h3>
         </div>
       </section>
       orem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et
