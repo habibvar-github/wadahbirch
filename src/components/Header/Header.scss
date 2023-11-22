@@ -1,0 +1,106 @@
+// Define breakpoints and any other variables
+$breakpoint-small: 768px;
+$menu-background: rgba(255, 255, 255, 0.95); // Opaque white background
+$menu-item-spacing: 10px; // Spacing between menu items
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0) 20%,
+    rgba(255, 255, 255, 0.25) 100%
+  );
+  padding: 0 20px;
+  height: 6em;
+  transition: background-color 0.3s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+  &.opaque {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+  }
+
+  .menu-left,
+  .menu-right {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    img {
+      height: 1.3em; /* Example size */
+      padding-right: 1em;
+    }
+
+    a {
+      margin: 0px 10px;
+    }
+  }
+
+  .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    img {
+      height: 40px;
+    }
+  }
+
+  // Media query for small screens
+  @media (max-width: $breakpoint-small) {
+    padding: 0 10px;
+    justify-content: flex-end;
+
+    .menu-toggle {
+      display: block;
+      position: absolute;
+      left: 2em;
+      top: 2.5em;
+      img {
+        height: 1.3em; /* Example size */
+      }
+    }
+
+    .menu-left {
+      // ... other styles ...
+
+      // Hide the menu by default and show it when the .show class is added
+      display: none;
+      position: fixed; // Fixed instead of absolute to cover the whole screen
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; // Full screen height
+      background-color: $menu-background;
+      flex-direction: column; // Stack items vertically
+      justify-content: center; // Center items vertically
+      align-items: center; // Center items horizontally
+      z-index: 2000; // Higher z-index to be on top
+
+      &.show {
+        display: flex; // Show the menu
+      }
+
+      a {
+        margin: $menu-item-spacing 0; // Apply spacing on top and bottom of each item
+        padding: $menu-item-spacing;
+        text-align: center;
+        width: 100%; // Full width for tap targets
+        display: block; // Make the anchor fill the space for larger click/tap area
+      }
+    }
+  }
+}
