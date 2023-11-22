@@ -6,3 +6,43 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+.product-section {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+
+.product-box {
+  max-width: 25%;
+  text-align: center;
+  @media (max-width: 768px) {
+    width: 182px;
+  }
+}
+
+.image-container {
+  position: relative;
+}
+
+.product-box img {
+  border: 1px solid black;
+  max-width: 100%;
+  height: auto;
+  display: block; /* Ensures no extra space under the image */
+}
+
+.add-to-cart {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #000000; /* Black button color */
+  color: white;
+  border: none;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.add-to-cart:hover {
+  background-color: #333333; /* Slightly lighter black for hover effect */
+}

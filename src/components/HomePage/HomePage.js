@@ -7,6 +7,22 @@ const HomePage = () => {
       <section className="hero-section">
         {/* <img src="/product-main.png" alt="bottles-and-packing" /> */}
       </section>
+      <section class="product-section">
+        <div class="product-box">
+          <div class="image-container">
+            <img src="product-1L.png" alt="Product 1" />
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+          <h3>6 x 1L</h3>
+        </div>
+        <div class="product-box">
+          <div class="image-container">
+            <img src="product-500ML.png" alt="Product 2" />
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+          <h3>6 x 500ml</h3>
+        </div>
+      </section>
       orem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et
       iaculis metus. Duis hendrerit non leo vel commodo. Integer mauris odio,
       sodales in ornare in, iaculis eu metus. Maecenas felis purus, accumsan
