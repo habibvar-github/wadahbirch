@@ -1,4 +1,5 @@
 import React from "react";
+import CustomSelect from "../CustomSelect/CustomSelect";
 import "./HomePage.css";
 
 const HomePage = () => {
@@ -7,19 +8,30 @@ const HomePage = () => {
       <section className="hero-section">
         {/* <img src="/product-main.png" alt="bottles-and-packing" /> */}
       </section>
-      <section class="product-section">
-        <div class="product-box">
-          <div class="image-container">
-            <p>6 x 1L Birch Sap</p>
-            <img src="product-1L.png" alt="Product 1" />
-            <button class="add-to-cart">Add to Cart</button>
+      <section className="product-section">
+        <div className="product-content">
+          <div className="product-image">
+            <img src="product-1L.png" alt="Product Name" />
           </div>
-        </div>
-        <div class="product-box">
-          <div class="image-container">
-            <p>6 x 500ml Birch Sap</p>
-            <img src="product-500ML.png" alt="Product 2" />
-            <button class="add-to-cart">Add to Cart</button>
+          <div className="product-details">
+            <h2>Birch Sap</h2>
+            <p>
+              We tap our birch trees once a year during a small time period in
+              Spring.
+            </p>
+            {/* Product Options */}
+            <div className="product-options">
+              {/* Example: Size option */}
+              <CustomSelect
+                options={[
+                  "Select an option",
+                  "1l x 6 bottles",
+                  "500ml x 6 bottles",
+                ]}
+              />
+              {/* Add more options as needed */}
+            </div>
+            <button className="add-to-cart">Add to Cart</button>
           </div>
         </div>
       </section>
