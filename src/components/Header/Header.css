@@ -1,9 +1,8 @@
 .header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-around;
   background: linear-gradient(0deg, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.25) 100%);
-  padding: 0 20px;
   height: 6em;
   transition: background-color 0.3s;
   position: fixed;
@@ -38,24 +37,12 @@
 .header .menu-right a {
   margin: 0px 10px;
 }
-.header .logo {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
 .header .logo img {
   height: calc(2vw + 1em);
 }
 @media (max-width: 768px) {
-  .header {
-    padding: 0 10px;
-    justify-content: flex-end;
-  }
   .header .menu-toggle {
     display: block;
-    position: absolute;
-    left: 2em;
-    top: 2.5em;
   }
   .header .menu-toggle img {
     height: 1.3em; /* Example size */
