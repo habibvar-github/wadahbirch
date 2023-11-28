@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import CustomSelect from "../CustomSelect/CustomSelect";
 import "./HomePage.css";
 
 const HomePage = () => {
+  const [selectedOption, setSelectedOption] = useState("Select an option");
+
   return (
     <div className="white-text">
       <section className="hero-section">
@@ -14,24 +16,33 @@ const HomePage = () => {
             <img src="product-1L.png" alt="Product Name" />
           </div>
           <div className="product-details">
-            <h2>Birch Sap</h2>
-            <p>
-              We tap our birch trees once a year during a small time period in
-              Spring.
-            </p>
-            {/* Product Options */}
-            <div className="product-options">
-              {/* Example: Size option */}
-              <CustomSelect
-                options={[
-                  "Select an option",
-                  "1l x 6 bottles",
-                  "500ml x 6 bottles",
-                ]}
-              />
-              {/* Add more options as needed */}
+            <div className="product-info">
+              <h2>Birch Sap</h2>
+              <p>
+                Discover the forest's essence with our Naturally Tapped Birch
+                Sap, a rejuvenating drink from birch trees. Carefully harvested
+                in early spring, this clear sap is rich in natural benefits.
+              </p>
             </div>
-            <button className="add-to-cart">Add to Cart</button>
+            <div className="product-purchase-cta">
+              <div className="product-options">
+                <CustomSelect
+                  options={[
+                    "Select an option",
+                    "1l x 6 bottles",
+                    "500ml x 6 bottles",
+                  ]}
+                  selectedOption={selectedOption}
+                  setSelectedOption={setSelectedOption}
+                />
+              </div>
+              <button
+                className="add-to-cart"
+                disabled={selectedOption === "Select an option"}
+              >
+                Add to Cart
+              </button>
+            </div>
           </div>
         </div>
       </section>

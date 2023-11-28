@@ -6,7 +6,7 @@ $menu-item-spacing: 10px; // Spacing between menu items
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   background: linear-gradient(
     0deg,
     rgba(255, 255, 255, 0) 20%,
@@ -19,7 +19,22 @@ $menu-item-spacing: 10px; // Spacing between menu items
   left: 0;
   right: 0;
   z-index: 1000;
-  @media (max-width: 375px) {
+  padding: 0 50px;
+
+  @media (max-width: 425px) {
+    padding: 0 25px;
+  }
+
+  > * {
+    min-width: 270px;
+    display: flex;
+    justify-content: center;
+    @media (max-width: 1024px) {
+      min-width: 180px;
+    }
+    @media (max-width: $breakpoint-small) {
+      min-width: 50px;
+    }
   }
 
   &.opaque {
@@ -35,18 +50,23 @@ $menu-item-spacing: 10px; // Spacing between menu items
     cursor: pointer;
   }
 
-  .menu-left,
+  .menu,
   .menu-right {
     font-weight: bold;
     display: flex;
     align-items: center;
+    justify-content: center;
     img {
       height: 1.3em; /* Example size */
-      padding-right: 1em;
+      padding: 0 0.5em;
     }
     a {
       margin: 0px 10px;
     }
+  }
+
+  .menu-right {
+    justify-content: flex-end;
   }
 
   .logo {
@@ -64,7 +84,7 @@ $menu-item-spacing: 10px; // Spacing between menu items
       }
     }
 
-    .menu-left {
+    .menu {
       // ... other styles ...
 
       // Hide the menu by default and show it when the .show class is added

@@ -17,23 +17,25 @@ function Header() {
 
   return (
     <header className={`header ${isScrolled ? "opaque" : ""}`}>
-      <button
-        className="menu-toggle"
-        onClick={() => setMenuVisible(!menuVisible)}
-      >
-        <img src="/icons/menu-toggle.png" alt="Menu" />
-      </button>
-      <nav className={`menu-left ${menuVisible ? "show" : ""}`}>
-        <a href="/shop" onClick={() => setMenuVisible(false)}>
-          SHOP
-        </a>
-        <a href="/about" onClick={() => setMenuVisible(false)}>
-          ABOUT
-        </a>
-        <a href="/sustainability" onClick={() => setMenuVisible(false)}>
-          OUR IMPACT
-        </a>
-      </nav>
+      <div className="menu-left">
+        <button
+          className="menu-toggle"
+          onClick={() => setMenuVisible(!menuVisible)}
+        >
+          <img src="/icons/menu-toggle.png" alt="Menu" />
+        </button>
+        <nav className={`menu ${menuVisible ? "show" : ""}`}>
+          <a href="/shop" onClick={() => setMenuVisible(false)}>
+            SHOP
+          </a>
+          <a href="/about" onClick={() => setMenuVisible(false)}>
+            ABOUT
+          </a>
+          <a href="/sustainability" onClick={() => setMenuVisible(false)}>
+            OUR IMPACT
+          </a>
+        </nav>
+      </div>
       <div className="logo">
         <Link to="/">
           <img src="logo.png" alt="Logo" />

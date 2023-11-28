@@ -1,7 +1,7 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   background: linear-gradient(0deg, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.25) 100%);
   height: 6em;
   transition: background-color 0.3s;
@@ -10,6 +10,27 @@
   left: 0;
   right: 0;
   z-index: 1000;
+  padding: 0 50px;
+}
+@media (max-width: 425px) {
+  .header {
+    padding: 0 25px;
+  }
+}
+.header > * {
+  min-width: 270px;
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 1024px) {
+  .header > * {
+    min-width: 180px;
+  }
+}
+@media (max-width: 768px) {
+  .header > * {
+    min-width: 50px;
+  }
 }
 .header.opaque {
   background-color: white;
@@ -22,20 +43,24 @@
   font-size: 1em;
   cursor: pointer;
 }
-.header .menu-left,
+.header .menu,
 .header .menu-right {
   font-weight: bold;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
-.header .menu-left img,
+.header .menu img,
 .header .menu-right img {
   height: 1.3em; /* Example size */
-  padding-right: 1em;
+  padding: 0 0.5em;
 }
-.header .menu-left a,
+.header .menu a,
 .header .menu-right a {
   margin: 0px 10px;
+}
+.header .menu-right {
+  justify-content: flex-end;
 }
 .header .logo img {
   height: calc(2vw + 1em);
@@ -47,7 +72,7 @@
   .header .menu-toggle img {
     height: 1.3em; /* Example size */
   }
-  .header .menu-left {
+  .header .menu {
     display: none;
     position: fixed;
     top: 0;
@@ -60,10 +85,10 @@
     align-items: center;
     z-index: 2000;
   }
-  .header .menu-left.show {
+  .header .menu.show {
     display: flex;
   }
-  .header .menu-left a {
+  .header .menu a {
     margin: 10px 0;
     padding: 10px;
     text-align: center;

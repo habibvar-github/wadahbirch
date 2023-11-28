@@ -1,9 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./CustomSelect.css";
 
-const CustomSelect = ({ options }) => {
+const CustomSelect = ({ options, selectedOption, setSelectedOption }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState(options[0]);
   const dropdownRef = useRef(null);
 
   const toggleDropdown = () => setIsOpen(!isOpen);
@@ -34,9 +33,6 @@ const CustomSelect = ({ options }) => {
       {isOpen && (
         <div className="dropdown-list">
           {options.map((option, i) => {
-            if (i === 0) {
-              return null;
-            }
             return (
               <div
                 className="dropdown-item"
