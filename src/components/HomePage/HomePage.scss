@@ -1,22 +1,71 @@
 .hero-section {
   width: 100%;
-  height: calc(100vh + 100px); /* 100px greater than the viewport height */
-  background-image: url("../../../public/product-main.png"); /* Replace with your image path */
+  height: calc(100vh + 100px); // 100px greater than the viewport height
+  background: url("../../../public/product-main-laptopscreens.png") center
+    no-repeat; // Replace with your image path
   background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
   @media (max-width: 756px) {
+    justify-content: center;
+    background: url("../../../public/product-main.png") center no-repeat;
     height: 836px;
   }
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    position: absolute; // Positioning inside the hero-section
+    text-align: center;
+    color: white; // Adjust the color based on your background
+    margin-bottom: 50px;
+    @media (max-width: 756px) {
+      width: 80%;
+      background-color: #44444496;
+      padding: 25px 0 40px 0;
+    }
+
+    h1 {
+      font-size: 3em; // Adjust the font size as needed
+      margin-bottom: 20px;
+      width: 80%;
+    }
+
+    p {
+      font-size: 1.5em; // Adjust the font size as needed
+      margin-bottom: 30px;
+      width: 60%;
+    }
+
+    .learn-more-btn {
+      padding: 10px 20px;
+      background-color: black; // Adjust hover color as needed
+      color: white; // Adjust text color as needed
+      border: none;
+      cursor: pointer;
+      font-size: 1.2em; // Adjust the font size as needed
+
+      &:hover {
+        background-color: #b4a49c; // Adjust hover color as needed
+        color: white;
+      }
+    }
+  }
 }
+
 .product-section {
   display: flex;
   padding: 60px 10vw;
   height: 700px;
   width: 100%;
+
   @media (max-width: 756px) {
     height: auto;
-    padding: 60px 5vw;
+    padding: 40px 5vw 20px 5vw;
   }
 }
 
@@ -25,6 +74,7 @@
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
+
   @media (max-width: 756px) {
     flex-direction: column;
   }
@@ -33,18 +83,20 @@
 .product-image {
   max-width: 45%;
   object-fit: cover;
+
   @media (max-width: 756px) {
     max-width: 100%;
     display: flex;
     justify-content: center;
   }
-}
 
-.product-image img {
-  height: 100%;
-  width: 580px;
-  @media (max-width: 756px) {
-    width: 80%;
+  img {
+    height: 100%;
+    width: 580px;
+
+    @media (max-width: 756px) {
+      width: 80%;
+    }
   }
 }
 
@@ -57,40 +109,45 @@
   align-items: center;
   text-align: center;
   padding: 0 70px;
+
   @media (max-width: 756px) {
     font-size: 3vw;
     padding: 15px 0;
     width: 80%;
   }
-}
 
-.product-info {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  h2 {
-    font-size: 2.6em;
-    @media (max-width: 756px) {
-      font-size: 2.4em;
+  .product-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+      font-size: 2.6em;
+
+      @media (max-width: 756px) {
+        font-size: 2.4em;
+      }
+    }
+
+    p {
+      margin: 15px 0 25px 0;
+      font-size: 1.3em;
+
+      @media (max-width: 756px) {
+        font-size: 1em;
+      }
     }
   }
-  p {
-    margin: 15px 0 25px 0;
-    font-size: 1.3em;
+
+  .product-purchase-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.4em;
+
     @media (max-width: 756px) {
       font-size: 1em;
     }
-  }
-}
-
-.product-purchase-cta {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 1.4em;
-  @media (max-width: 756px) {
-    font-size: 1em;
   }
 }
 
@@ -113,21 +170,54 @@
 }
 
 .add-to-cart {
-  background-color: #ebebeb; /* Black button color */
+  background-color: #ebebeb; // Black button color
   color: black;
   padding: 10px 20px;
   cursor: pointer;
   margin-top: 10px;
   width: 100%;
   font-size: 1em;
+
   &:hover {
     background-color: black;
     color: white;
   }
+
   &:disabled {
     background-color: dimgrey;
     color: linen;
     opacity: 1;
     cursor: not-allowed;
+  }
+}
+
+.benefits-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  @media (max-width: 756px) {
+    flex-direction: column;
+    padding-bottom: 20px;
+    text-align: left;
+    width: 70%;
+    margin: auto;
+  }
+  .benefit-item {
+    text-align: left;
+    font-weight: bold;
+    max-width: 250px; // Adjust the width as per your layout requirement
+    height: 250px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+    text-overflow: ellipsis;
+    @media (max-width: 756px) {
+      display: list-item; /* This has to be "list-item" */
+      height: auto;
+      box-shadow: none;
+      padding: 0;
+    }
   }
 }
