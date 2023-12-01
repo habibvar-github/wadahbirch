@@ -5,6 +5,55 @@ import "./HomePage.css";
 const HomePage = () => {
   const [selectedOption, setSelectedOption] = useState("Select an option");
 
+  const benefitsArray = [
+    { name: "Natural Detoxifier", image: "/detox.png", imageAlt: "detox_icon" },
+    {
+      name: "Skin Health",
+      image: "/skin-health.png",
+      imageAlt: "skin-health_icon",
+    },
+    {
+      name: "Rich in Nutrients",
+      image: "/nutrients.png",
+      imageAlt: "nutrients_icon",
+    },
+    {
+      name: "Boosts Immunity",
+      image: "/immunity.png",
+      imageAlt: "immunity_icon",
+    },
+  ];
+
+  const benefitsArray2 = [
+    { name: "Joint Health", image: "/joint.png", imageAlt: "joint_icon" },
+    {
+      name: "Aids in Digestion",
+      image: "/digestion.png",
+      imageAlt: "digestion_icon",
+    },
+    {
+      name: "Cardiovascular Health",
+      image: "/heart.png",
+      imageAlt: "heart_icon",
+    },
+    {
+      name: "Weight Loss",
+      image: "/weight-loss.png",
+      imageAlt: "weight-loss_icon",
+    },
+  ];
+
+  const benefitsFunction = (array) => {
+    return array.map((benefit) => {
+      return (
+        <div className="benefit-item">
+          <img src={benefit.image} alt={benefit.imageAlt} />
+          <p>{benefit.name}</p>
+        </div>
+      );
+    });
+  };
+
   return (
     <div className="white-text">
       <section className="hero-section">
@@ -50,15 +99,14 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+      <hr></hr>
       <section className="benefits-section">
-        <div className="benefit-item">Rich in Nutrients</div>
-        <div className="benefit-item">Natural Detoxifier</div>
-        <div className="benefit-item">Supports Skin Health</div>
-        <div className="benefit-item">Boosts Immunity</div>
-        <div className="benefit-item">Promotes Joint Health</div>
-        <div className="benefit-item">Aids in Digestion</div>
-        <div className="benefit-item">Weight Loss Support</div>
-        <div className="benefit-item">Supports Cardiovascular Health</div>
+        <div className="benefits-divider">
+          {benefitsFunction(benefitsArray)}
+        </div>
+        <div className="benefits-divider">
+          {benefitsFunction(benefitsArray2)}
+        </div>
       </section>
     </div>
   );
