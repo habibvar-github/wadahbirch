@@ -8,11 +8,12 @@ import ProductDetailPage from "./components/ProductDetailPage/ProductDetailPage"
 import Cart from "./components/Cart/Cart";
 import Checkout from "./components/Checkout/Checkout";
 import NotFound from "./components/NotFound/NotFound";
+import "./App.css";
 
 function App() {
   return (
     <Router>
-      <div>
+      <div className="App">
         <Header />
         <Routes>
           <Route path="/" exact element={<HomePage />} />

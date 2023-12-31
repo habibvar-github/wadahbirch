@@ -3,6 +3,46 @@ $breakpoint-small: 768px;
 $menu-background: rgba(255, 255, 255, 0.95); // Opaque white background
 $menu-item-spacing: 10px; // Spacing between menu items
 
+.preheader {
+  height: 25px;
+  z-index: 3000;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  font-size: 0.9em;
+  @media (max-width: 425px) {
+    font-size: 3.5vw;
+  }
+
+  .preheader-left {
+    display: flex;
+  }
+
+  .whatsapp-number,
+  .language-change,
+  .currency-change {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+
+    select {
+      border: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      @media (max-width: 425px) {
+        width: 10vw;
+      }
+
+      option {
+      }
+    }
+  }
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -14,6 +54,7 @@ $menu-item-spacing: 10px; // Spacing between menu items
   );
   height: 6em;
   transition: background-color 0.3s;
+  transition: 0.1s;
   position: fixed;
   top: 0;
   left: 0;
@@ -40,6 +81,10 @@ $menu-item-spacing: 10px; // Spacing between menu items
   &.opaque {
     background-color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  &.top-margin {
+    margin-top: 25px;
   }
 
   .menu-toggle {
@@ -79,6 +124,7 @@ $menu-item-spacing: 10px; // Spacing between menu items
   @media (max-width: $breakpoint-small) {
     .menu-toggle {
       display: block;
+      z-index: 3000;
       img {
         height: 1.3em; /* Example size */
       }
@@ -92,12 +138,12 @@ $menu-item-spacing: 10px; // Spacing between menu items
       position: fixed; // Fixed instead of absolute to cover the whole screen
       top: 0;
       left: 0;
-      width: 100%;
+      width: 50%;
       height: 100%; // Full screen height
       background-color: $menu-background;
       flex-direction: column; // Stack items vertically
-      justify-content: center; // Center items vertically
-      align-items: center; // Center items horizontally
+      padding-top: 80px;
+      justify-content: flex-start; // Center items vertically
       z-index: 2000; // Higher z-index to be on top
 
       &.show {

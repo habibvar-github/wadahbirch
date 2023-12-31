@@ -28,6 +28,7 @@
 }
 @media (max-width: 756px) {
   .hero-section .hero-content {
+    text-shadow: none;
     width: 80%;
     background-color: rgba(68, 68, 68, 0.5882352941);
     padding: 25px 0 40px 0;

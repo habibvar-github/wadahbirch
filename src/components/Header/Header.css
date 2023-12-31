@@ -1,3 +1,44 @@
+.preheader {
+  height: 25px;
+  z-index: 3000;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  font-size: 0.9em;
+}
+@media (max-width: 425px) {
+  .preheader {
+    font-size: 3.5vw;
+  }
+}
+.preheader .preheader-left {
+  display: flex;
+}
+.preheader .whatsapp-number,
+.preheader .language-change,
+.preheader .currency-change {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+.preheader .whatsapp-number select,
+.preheader .language-change select,
+.preheader .currency-change select {
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+@media (max-width: 425px) {
+  .preheader .whatsapp-number select,
+  .preheader .language-change select,
+  .preheader .currency-change select {
+    width: 10vw;
+  }
+}
 .header {
   display: flex;
   align-items: center;
@@ -5,6 +46,7 @@
   background: linear-gradient(0deg, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.25) 100%);
   height: 6em;
   transition: background-color 0.3s;
+  transition: 0.1s;
   position: fixed;
   top: 0;
   left: 0;
@@ -35,6 +77,9 @@
 .header.opaque {
   background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.header.top-margin {
+  margin-top: 25px;
 }
 .header .menu-toggle {
   display: none;
@@ -68,6 +113,7 @@
 @media (max-width: 768px) {
   .header .menu-toggle {
     display: block;
+    z-index: 3000;
   }
   .header .menu-toggle img {
     height: 1.3em; /* Example size */
@@ -77,12 +123,12 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 50%;
     height: 100%;
     background-color: rgba(255, 255, 255, 0.95);
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    padding-top: 80px;
+    justify-content: flex-start;
     z-index: 2000;
   }
   .header .menu.show {
